@@ -25,10 +25,8 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({select = true }),
         ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), {'i','c'}),
         ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), {'i','c'}),
-        --['C-n'] = cmp.mapping.select_next_item(), 
-        --['C-p'] = cmp.mapping.select_prev_item(),
     },
-        
+
 	formatting = {
 		format = function(entry, vim_item)
 			vim_item.kind = lspkind.presets.default[vim_item.kind]
@@ -86,6 +84,40 @@ require("lspconfig").rust_analyzer.setup(config({
     cmd = { "rustup", "run", "nightly", "rust-analyzer"},
 }))
 
+require("lspconfig").gopls.setup(config({
+	cmd = { "gopls", "serve" },
+	settings = {
+		gopls = {
+			analyses = {
+				unusedparams = true,
+			},
+			staticcheck = true,
+		},
+	},
+}))
+
+require("lspconfig").sumneko_lua.setup(config({
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = "LuaJIT",
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {"vim"},
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}))
 
 local opts = {
     highlight_hovered_item = true,

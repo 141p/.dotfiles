@@ -14,6 +14,7 @@ set scrolloff=8
 set signcolumn=yes
 set colorcolumn=80
 set splitright
+set termguicolors
 
 let g:netrw_browse_split = 0
 let g:netrw_banner = 0
@@ -49,18 +50,24 @@ Plug 'romgrk/nvim-treesitter-context'
 Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
 
+" Status Bar Plugins
+Plug 'nvim-lualine/lualine.nvim'
 " Colorscheme 
 Plug 'gruvbox-community/gruvbox'
+Plug 'sainnhe/everforest'
+Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
+Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'franbach/miramare'
+Plug 'Nequo/vim-allomancer'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
 call plug#end()
 
 lua require("lua_files")
 
 
-colorscheme gruvbox
-highlight Normal guibg=none
-
-
+colorscheme catppuccin
+" highlight Normal guibg=none
 
 let mapleader = " "
 
@@ -81,3 +88,4 @@ nnoremap <leader>+ : vertical resize +5<CR>
 nnoremap <leader>- : vertical resize -5<CR>
 nnoremap <leader>rs : resize 100<CR>
 nnoremap <leader><CR> : so ~/.config/nvim/init.vim<CR>
+
