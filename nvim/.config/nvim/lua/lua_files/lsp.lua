@@ -78,6 +78,8 @@ local function config(_config)
 	}, _config or {})
 end
 
+require("lspconfig").hls.setup(config())
+
 require("lspconfig").jedi_language_server.setup(config())
 
 require("lspconfig").rust_analyzer.setup(config({
