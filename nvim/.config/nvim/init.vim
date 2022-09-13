@@ -52,6 +52,7 @@ Plug 'preservim/nerdtree'
 
 " Status Bar Plugins
 Plug 'nvim-lualine/lualine.nvim'
+
 " Colorscheme 
 Plug 'gruvbox-community/gruvbox'
 Plug 'sainnhe/everforest'
