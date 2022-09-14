@@ -1,7 +1,7 @@
 # DOTFILES
 
 This repository contains the configuration files for some of the programs I use. 
-Most of the configurations are copied from ThePrimeagen. check out his dotfiles in [ThePrimeagen/.dotfiles](https://github.com/ThePrimeagen/.dotfiles)
+Most of the configurations are copied from ThePrimeagen. Check out his dotfiles at [ThePrimeagen/.dotfiles](https://github.com/ThePrimeagen/.dotfiles)
 
 ## Installation
 
